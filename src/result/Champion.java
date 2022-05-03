@@ -24,6 +24,9 @@ public class Champion {
 	public int getLife() {
 		return life;
 	}
+	public void setLife(int life) {
+		this.life = life;
+	}
 	
 	public int getAtack() {
 		return atack;
@@ -34,33 +37,26 @@ public class Champion {
 	}
 	
 	public void takeDamage(Champion other) {
-	this.life += this.armor - this.atack; 
+if (other.getArmor() >= this.atack ) {
+	other.setLife(other.getLife()-1);
+}
+else {
+	other.setLife(other.getLife() + other.getArmor()- this.atack);
+}
 	}
 	
 	public String status() {
-		while (life > 0) {
-			
-			System.out.println(name+ ":"+ life+" de vida");
-			System.out.println(name+ ":"+ life+" de vida");
-		}
-		if(life <= 0) {
-			
-			System.out.println(name+ life+": de vida(morreu)");
-			System.out.println(name+ ":"+ life+" de vida");
-			
-		}
-		else {
-			System.out.println(name+ ":"+ life+" de vida");
-			System.out.println(name+ ":"+ life+" de vida");
-			
-		}
-		return  "FIM DO COMATE";
+		
+	if (this.life <= 0 ) {
+		return this.name + ": " + "0 de vida (morreu)";
+	}
+	else {	
+		return this.name
+				+": "
+				+String.format("%d", this.life)
+				+ " de vida";
+	}
 	}
 	
-	public String toString() {
-		return name
-		+": "
-		+life
-		+ " de vida";
-	}
+	
 }
