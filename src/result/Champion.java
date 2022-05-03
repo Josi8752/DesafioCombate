@@ -33,17 +33,18 @@ public class Champion {
 	}
 	
 	public void takeDamage(Champion other ) {
-		(life + armor) - atack;
+		(life + armor) - atack; 
 	}
 	public String status() {
-		if ( takeDamage <= 0) {
-			return name
-					+": "
-					+ takeDamage
-					+ " de vida (morreu)"
-					+"FIM DO COMATE";
+		if (life <= 0) {
+		System.out.println("(morreu)");
+		System.out.println("FIM DO COMATE");
 		}
-		
 	}
-	
+	public String toString() {
+		return name
+		+": "
+		+life
+		+ " de vida";
+	}
 }
