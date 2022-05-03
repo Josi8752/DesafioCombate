@@ -8,7 +8,7 @@ public class Champion {
 	private int armor;
 	
 	public Champion(String name, int life, int atack, int armor) {
-		super();
+		
 		this.name = name;
 		this.life = life;
 		this.atack = atack;
@@ -32,15 +32,20 @@ public class Champion {
 		return armor;
 	}
 	
-	public void takeDamage(Champion other ) {
-		(life + armor) - atack; 
+	public void takeDamage(Champion other) {
+	this.life += this.armor - this.atack; 
 	}
+	
 	public String status() {
 		if (life <= 0) {
-		System.out.println("(morreu)");
-		System.out.println("FIM DO COMATE");
+			System.out.println(name+ life+": de vida(morreu)");	
 		}
+		else {
+			System.out.println(name+ ":"+ life+": de vida");	
+		}
+		return  "FIM DO COMATE";
 	}
+	
 	public String toString() {
 		return name
 		+": "

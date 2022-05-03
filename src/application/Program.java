@@ -11,41 +11,34 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		Champion champion;
+
+		System.out.println("Digite os dados do primeiro campeão: ");
+		System.out.print("Nome: ");
+		String name = sc.nextLine();
+		System.out.print("Vida inicial: ");
+		int life = sc.nextInt();
+		System.out.print("Ataque: ");
+		int atack = sc.nextInt();
+		System.out.print("Armadura: ");
+		int armor = sc.nextInt();
+		champion = new Champion(name, life, atack, armor);
+		champion.takeDamage(champion);
 		
-			System.out.println("Digite os dados do primeiro campeão: ");
-			System.out.print("Nome: ");
-			String nome = sc.nextLine();
-			System.out.print("Vida inicial: ");
-			int vidaInicial = sc.nextInt();
-			System.out.print("Ataque: ");
-			int ataque = sc.nextInt();
-			System.out.print("Armadura: ");
-			int armadura = sc.nextInt();
-			champion = new Champion(nome, vidaInicial,ataque,armadura);
-			
-			System.out.println();
-			System.out.println("Digite os dados do primeiro campeão: ");
-			System.out.print("Nome: ");
-			String nome2 = sc.nextLine();
-			System.out.print("Vida inicial: ");
-			int vidaInicial2 = sc.nextInt();
-			System.out.print("Ataque: ");
-			int ataque2 = sc.nextInt();
-			System.out.print("Armadura: ");
-			int armadura2 = sc.nextInt();
-			champion = new Champion(nome2, vidaInicial2,ataque2,armadura2);
-			
-			System.out.println("Quantos turnos você deseja executar? ");
-			int N = sc.nextInt();
-			
-		 for (int i = 0; N > i; i++) {
-			 System.out.printf("Resultado do turno", i, ":");
-			 champion.status();
-			 System.out.print(champion);
-		 }
-			
-			
-	sc.close();
+		System.out.println();
+		System.out.println("Digite os dados do segundo campeão: ");
+		System.out.print("Nome: ");
+		String nome = sc.nextLine();
+		sc.nextLine();
+		System.out.print("Vida inicial: ");
+		int vidaInicial = sc.nextInt();
+		System.out.print("Ataque: ");
+		int ataque = sc.nextInt();
+		System.out.print("Armadura: ");
+		int armadura = sc.nextInt();
+		champion = new Champion(nome, vidaInicial, ataque, armadura);
+		champion.takeDamage(champion);
+		
+		champion.status();
+		sc.close();
 	}
-}	
-	
+}
