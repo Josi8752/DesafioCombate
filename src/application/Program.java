@@ -22,8 +22,7 @@ public class Program {
 		System.out.print("Armadura: ");
 		int armor = sc.nextInt();
 		champion = new Champion(name, life, atack, armor);
-		champion.takeDamage(champion);
-		
+	
 		System.out.println();
 		System.out.println("Digite os dados do segundo campeão: ");
 		System.out.print("Nome: ");
@@ -38,7 +37,12 @@ public class Program {
 		champion = new Champion(nome, vidaInicial, ataque, armadura);
 		champion.takeDamage(champion);
 		
-		champion.status();
+		
+		System.out.println("Quantos turnos você deseja executar? ");
+		int N = sc.nextInt();
+		for (int i = 0; N > i; i++) {
+			champion.status();
+		}
 		sc.close();
 	}
 }

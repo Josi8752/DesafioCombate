@@ -14,6 +14,7 @@ public class Champion {
 		this.atack = atack;
 		this.armor = armor;
 	}
+
 	public String getName() {
 		return name;
 	}
@@ -37,11 +38,21 @@ public class Champion {
 	}
 	
 	public String status() {
-		if (life <= 0) {
-			System.out.println(name+ life+": de vida(morreu)");	
+		while (life > 0) {
+			
+			System.out.println(name+ ":"+ life+" de vida");
+			System.out.println(name+ ":"+ life+" de vida");
+		}
+		if(life <= 0) {
+			
+			System.out.println(name+ life+": de vida(morreu)");
+			System.out.println(name+ ":"+ life+" de vida");
+			
 		}
 		else {
-			System.out.println(name+ ":"+ life+": de vida");	
+			System.out.println(name+ ":"+ life+" de vida");
+			System.out.println(name+ ":"+ life+" de vida");
+			
 		}
 		return  "FIM DO COMATE";
 	}
